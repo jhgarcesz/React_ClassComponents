@@ -1,33 +1,34 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Product = ({ detail }) => (
-    <li key={detail.id} className="my-app__simple-list-item">
+import {
+  Avatar,
+  IconSeparator
+} from 'react-md';
+
+const ProductItem = ({ detail }) => (
+    <IconSeparator label={detail.name} iconBefore component="li" className="md-cell md-cell--12 product_name">
+        <Avatar src={detail.photo} role="presentation" />
+        <small>{detail.categories.join(', ')} - {detail.brand} </small>
         <div>
-            <h3>{detail.name}</h3>
-            {detail.categories.map(category =>(
-              <small>{category}, </small>
-            ))}
-            <small>- {detail.brand}</small>
-            <img src={detail.photo} alt="" />
             <p>{detail.description}</p>
             <strong>Stock: </strong><p>{detail.stock}</p>
             <strong>Price: </strong><p>{detail.price}</p>
         </div>
-    </li>
+    </IconSeparator>
 );
 
-Product.propTypes = {
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    brand: PropTypes.string.isRequired,
-    categories: PropTypes.arrayOf(PropTypes.string).isRequired,
-    description: PropTypes.string.isRequired,
-    photo: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
-    stock: PropTypes.number.isRequired
+ProductItem.propTypes = {
+    id: PropTypes.string,
+    name: PropTypes.string,
+    brand: PropTypes.string,
+    categories: PropTypes.arrayOf(PropTypes.string),
+    description: PropTypes.string,
+    photo: PropTypes.string,
+    price: PropTypes.string,
+    stock: PropTypes.number
 };
 
-Product.defaultProps = {};
+ProductItem.defaultProps = {};
 
-export default Product;
+export default ProductItem;
