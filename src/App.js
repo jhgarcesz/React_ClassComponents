@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { NavigationDrawer } from 'react-md';
 import logo from './logo.svg';
-import './App.css';
+import './styles/App.scss'
 
 import SimpleList from "./containers/SimpleList";
+import ProductItem from "./containers/ProductItem";
 
 class App extends Component {
   render() {
@@ -28,7 +29,7 @@ class App extends Component {
                 </a>
             </header>
             <section>
-                <SimpleList />
+                <ProductItem/>
             </section>
         </div>
     </NavigationDrawer>
