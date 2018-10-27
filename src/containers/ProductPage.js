@@ -9,11 +9,14 @@ class ProductPageContainer extends React.Component {
     super(...args);
 
     this.state = {
-      items: []
+      items: [],
+      category: args.location
     };
   }
 
   async componentDidMount() {
+      debugger;
+    console.log('location is ', this.state.category)
     const items = await getProducts();
     this.setState({ items });
   }
