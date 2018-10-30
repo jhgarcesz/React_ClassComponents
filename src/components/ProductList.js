@@ -3,12 +3,10 @@ import PropTypes from "prop-types";
 
 import ProductItem  from "./ProductItem";
 
-import {
-  List
-} from 'react-md';
+import { List } from 'react-md';
 
 const ProductList = ({ products }) => (
-    <List className="md-list-unstyled md-grid avatars__examples">
+    <List className="md-list-unstyled md-grid">
         {products.map(product => (
             <ProductItem detail= { product }  key= { product.id } />
         ))}
