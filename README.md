@@ -1,5 +1,5 @@
-## Instructions
-To run the app when it's downloaded:
+## Instructions to run the project
+Once the code has been downloaded:
 
 - $ npm install
 - $ npm start
