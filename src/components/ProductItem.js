@@ -8,8 +8,8 @@ const ProductItem = ({ detail }) => (
             <h6 className="product_item_category"> {detail.categories.join(', ')} - {detail.brand} </h6>
         </div>
         <div className="product_item_container">
-            <figure>
-                <img src={detail.photo} alt="" width="150" height="150" />
+            <figure className="product_item_figure">
+                <img src={detail.photo} alt=""  className="product_item_photo" />
             </figure>
             <div className="product_item_description">
                 <p>{detail.description}</p>
