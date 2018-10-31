@@ -31,6 +31,7 @@ const MainPage = () => (
                     {menuItems.map(props => <NavItemLink {...props} key={props.to} />)}
                 </ul>
             </header>
+            <div className="products-content">
             <Switch>
                 <Route exact path={menuItems[0].to} component={HomePage} />
                 <Route exact path={menuItems[1].to} component={ProductsPage} />
@@ -38,6 +39,7 @@ const MainPage = () => (
                 <Route path={menuItems[2].to} component={ClientsPage} />
                 <Route exact path={menuItems[3].to} component={ContactPage} />
             </Switch>
+            </div>
         </div>
     </Router>
 );

@@ -29,6 +29,7 @@ const navItems =  [{
 const ProductsPage = ({ items, category }) => (
     <div className="product_page">
         <Drawer
+            className="product_page-categories"
             header={<Toolbar title={"Categories"} />}
             navItems={navItems.map(props => <NavItemLink {...props} key={props.to} />)}
         >
