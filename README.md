@@ -1,11 +1,12 @@
 ## Instructions
 To run the app when it's downloaded:
-$ npm install
-$ npm start
+
+-$ npm install
+-$ npm start
 
 See demo here:
 
-https://products-page.herokuapp.com/products
+https://products-page.herokuapp.com/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
