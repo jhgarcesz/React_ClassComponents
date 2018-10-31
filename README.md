@@ -1,8 +1,8 @@
 ## Instructions
 To run the app when it's downloaded:
 
--$ npm install
--$ npm start
+- [$ npm install]
+- [$ npm start]
 
 See demo here:
 
