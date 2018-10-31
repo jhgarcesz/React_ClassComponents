@@ -1,10 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Route } from 'react-router-dom';
 import { Drawer, Toolbar } from 'react-md';
 
 import NavItemLink from "./NavItemLink";
-import ProductList  from '../containers/ProductList'
+import ProductList  from './ProductList'
 
 const TO_PREFIX = '/products';
 
@@ -22,29 +21,29 @@ const navItems =  [{
     to: `${TO_PREFIX}/services`,
     icon: 'build',
 }, {
-  label: 'Office',
-  to: `${TO_PREFIX}/office`,
-  icon: 'folder',
+    label: 'Office',
+    to: `${TO_PREFIX}/office`,
+    icon: 'folder',
 }];
 
-const ProductsPage = ({ items }) => (
+const ProductsPage = ({ items, category }) => (
     <div className="product_page">
         <Drawer
             header={<Toolbar title={"Categories"} />}
             navItems={navItems.map(props => <NavItemLink {...props} key={props.to} />)}
         >
         </Drawer>
-        <Route exact path={TO_PREFIX} component={ProductList} />
-        <Route path={`${TO_PREFIX}/:category`} component={ProductList} />
+        <ProductList products={filterProducts(items, category)} />
     </div>
 );
 
-function Child({ match }) {
-  return (
-    <div>
-      <h3>ID: {match.params.id}</h3>
-    </div>
-  );
+const filterProducts = (products, category) => {
+    if (!category) {
+        return products;
+    }
+
+    const capitalizedCategory = category.replace(/\b\w/g, l => l.toUpperCase());
+    return products.filter(p => p.categories.includes(capitalizedCategory));
 }
 
 ProductsPage.propTypes = {

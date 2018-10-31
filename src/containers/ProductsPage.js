@@ -2,11 +2,11 @@ import React from "react";
 
 import ProductsPage from "../components/ProductsPage";
 
-import { getProducts } from "../api/simpleList";
+import { getProducts } from "../api/productsAPI";
 
 class ProductsPageContainer extends React.Component {
-    constructor(...args) {
-        super(...args);
+    constructor(...props) {
+        super(...props);
 
         this.state = {
             items: []
@@ -19,7 +19,8 @@ class ProductsPageContainer extends React.Component {
     }
 
     render() {
-        return <ProductsPage items={this.state.items} />;
+        const { match: { params } } = this.props;
+        return <ProductsPage items={this.state.items} category={params.category}  />;
     }
 }
 
