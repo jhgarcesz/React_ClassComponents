@@ -3,30 +3,30 @@
     margin: 0.3rem;
 }
 
-.product_item_container {
+.product_item-container {
     display: flex;
 }
 
-.product_item_description {
+.product_item-description {
     flex: 1;
     text-align: left;
 }
 
-.product_item_title {
+.product_item-title {
     margin: 2rem;
     text-align: left;
 }
 
-.product_item_category{
+.product_item-category{
     color: grey;
 }
 
-.product_item_photo {
+.product_item-photo {
     width: 150px;
     height: 150px;
 }
 
-.product_item_figure {
+.product_item-figure {
     width: 150px;
     height: 150px;
     background-color: gainsboro;

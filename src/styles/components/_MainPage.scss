@@ -1,0 +1,20 @@
+.header {
+    background-color: #bdbdbd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.2rem;
+    font-family: sans-serif;
+}
+
+ul.header-menu {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    cursor: default;
+    list-style: none;
+    margin-left: -1em;
+    padding-left: 0;
+}

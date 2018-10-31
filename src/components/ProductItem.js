@@ -3,18 +3,22 @@ import PropTypes from "prop-types";
 
 const ProductItem = ({ detail }) => (
     <div className="md-divider-border md-divider-border--top md-divider-border--right md-divider-border--bottom md-divider-border--left product_item" >
-        <div className="product_item_title">
+        <div className="product_item-title">
             <h3> {detail.name} </h3>
-            <h6 className="product_item_category"> {detail.categories.join(', ')} - {detail.brand} </h6>
+            <h6 className="product_item-category"> {detail.categories.join(', ')} - {detail.brand} </h6>
         </div>
-        <div className="product_item_container">
-            <figure className="product_item_figure">
-                <img src={detail.photo} alt=""  className="product_item_photo" />
+        <div className="product_item-container">
+            <figure className="product_item-figure">
+                <img src={detail.photo} alt=""  className="product_item-photo" />
             </figure>
-            <div className="product_item_description">
+            <div className="product_item-description">
                 <p>{detail.description}</p>
-                <strong>Stock: </strong><p>{detail.stock}</p>
-                <strong>Price: </strong><p>${detail.price}</p>
+                <div>
+                    <strong>Stock: </strong><span>{detail.stock}</span>
+                </div>
+                <div>
+                    <strong>Price: </strong><span>${detail.price}</span>
+                </div>
             </div>
          </div>
     </div>

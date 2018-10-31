@@ -19,7 +19,7 @@ const ProductList = ({ filteredProducts, category, products }) => (
 const displayCounter = (category, products, filteredProducts) => {
     if (category && products.length) {
         return (
-            <div className="product_list_counter">
+            <div className="product_list-counter">
                 <p> Showing
                     <strong> {filteredProducts.length} </strong>
                     products - Hidden:

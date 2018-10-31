@@ -26,7 +26,7 @@ const menuItems =  [{
 const MainPage = () => (
     <Router>
         <div>
-            <header className="app-header">
+            <header className="header">
                 <ul className="header-menu">
                     {menuItems.map(props => <NavItemLink {...props} key={props.to} />)}
                 </ul>

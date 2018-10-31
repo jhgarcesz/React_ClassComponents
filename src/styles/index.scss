@@ -1,6 +1,8 @@
 @import 'globals';
+@import 'components/MainPage';
 @import 'components/ProductItem';
 @import 'components/ProductList';
+@import 'components/ProductPage';
 
 @include react-md-everything;
 
