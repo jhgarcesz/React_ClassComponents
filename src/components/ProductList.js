@@ -5,20 +5,41 @@ import ProductItem  from "./ProductItem";
 
 import { List } from 'react-md';
 
-const ProductList = ({ products }) => (
-    <List className="md-list-unstyled md-grid">
-        {products.map(product => (
-            <ProductItem detail= { product }  key= { product.id } />
-        ))}
-    </List>
+const ProductList = ({ filteredProducts, category, products }) => (
+    <div className="product_list">
+        {displayCounter(category, products, filteredProducts)}
+        <List className="md-list-unstyled md-grid">
+            {filteredProducts.map(product => (
+                <ProductItem detail= { product }  key= { product.id } />
+            ))}
+        </List>
+    </div>
 );
 
+const displayCounter = (category, products, filteredProducts) => {
+    if (category && products.length) {
+        return (
+            <div className="product_list_counter">
+                <p> Showing
+                    <strong> {filteredProducts.length} </strong>
+                    products - Hidden:
+                    <strong> {products.length - filteredProducts.length} </strong>
+                </p>
+            </div>
+        );
+    }
+}
+
 ProductList.propTypes = {
-    products: PropTypes.arrayOf(PropTypes.object)
+    products: PropTypes.arrayOf(PropTypes.object),
+    filteredProducts: PropTypes.arrayOf(PropTypes.object),
+    category: PropTypes.string
 };
 
 ProductList.defaultProps = {
-    products: []
+    products: [],
+    filteredProducts: [],
+    category: ''
 };
 
 export default ProductList;

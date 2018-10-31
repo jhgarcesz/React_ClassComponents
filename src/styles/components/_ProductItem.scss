@@ -1,4 +1,22 @@
-.product_name {
-    color: black;
-    font-family: "Roboto";
+.product_item {
+    min-width: 100%;
+    margin: 0.3rem;
+}
+
+.product_item_container {
+    display: flex;
+}
+
+.product_item_description {
+    flex: 1;
+    text-align: left;
+}
+
+.product_item_title {
+    margin: 2rem;
+    text-align: left;
+}
+
+.product_item_category{
+    color: grey;
 }

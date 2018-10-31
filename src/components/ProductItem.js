@@ -1,19 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Avatar, IconSeparator } from 'react-md';
-
 const ProductItem = ({ detail }) => (
-    <div className="md-divider-border md-divider-border--top md-divider-border--right md-divider-border--bottom md-divider-border--left" >
-        <IconSeparator label={detail.name} iconBefore component="li" className="md-cell md-cell--12 product_name">
-            <Avatar src={detail.photo} role="presentation" />
-            <small>{detail.categories.join(', ')} - {detail.brand} </small>
-            <div>
+    <div className="md-divider-border md-divider-border--top md-divider-border--right md-divider-border--bottom md-divider-border--left product_item" >
+        <div className="product_item_title">
+            <h3> {detail.name} </h3>
+            <h6 className="product_item_category"> {detail.categories.join(', ')} - {detail.brand} </h6>
+        </div>
+        <div className="product_item_container">
+            <figure>
+                <img src={detail.photo} alt="" width="150" height="150" />
+            </figure>
+            <div className="product_item_description">
                 <p>{detail.description}</p>
                 <strong>Stock: </strong><p>{detail.stock}</p>
-                <strong>Price: </strong><p>{detail.price}</p>
+                <strong>Price: </strong><p>${detail.price}</p>
             </div>
-        </IconSeparator>
+         </div>
     </div>
 );
 

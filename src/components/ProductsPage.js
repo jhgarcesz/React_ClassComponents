@@ -33,7 +33,7 @@ const ProductsPage = ({ items, category }) => (
             navItems={navItems.map(props => <NavItemLink {...props} key={props.to} />)}
         >
         </Drawer>
-        <ProductList products={filterProducts(items, category)} />
+        <ProductList filteredProducts={filterProducts(items, category)} category={category} products={items} />
     </div>
 );
 
@@ -44,7 +44,7 @@ const filterProducts = (products, category) => {
 
     const capitalizedCategory = category.replace(/\b\w/g, l => l.toUpperCase());
     return products.filter(p => p.categories.includes(capitalizedCategory));
-}
+};
 
 ProductsPage.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object)
